@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import {projects} from '../data/projects'
 
-const projects = [
+/*const projects = [
   { id: 1, title: "CollabBoard", category: "Full-Stack", description: "Real-time collaborative whiteboard.", link: "https://github.com/sthuthii/collabboard" },
   { id: 2, title: "KleanKaravali", category: "Smart City", description: "Smart waste management system.", link: "https://github.com/sthuthii/kleankaravali" },
   { id: 3, title: "PCOS Detection", category: "ML / Health", description: "Deep learning clinical model.", link: "https://github.com/sthuthii/pcos-detection" },
   { id: 4, title: "Bio-Vault", category: "Web3 / Health", description: "Decentralized medical data twin.", link: "https://github.com/sthuthii" },
-];
+];*/
 
 const ProjectSection = () => {
   const [isPaused, setIsPaused] = useState(false);

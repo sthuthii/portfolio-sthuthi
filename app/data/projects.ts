@@ -4,7 +4,7 @@ export const projects = [
     title: "CollabBoard",
     category: "Full-Stack / WebSockets",
     description: "Real-time collaborative whiteboard with infinite canvas and persistent storage.",
-    link: "https://github.com/sthuthii/collabboard",
+    link: "https://github.com/sthuthii/board",
     image: "/project-collab.jpg" // Add your images to public/
   },
   {
@@ -12,23 +12,23 @@ export const projects = [
     title: "KleanKaravali",
     category: "Smart City / IoT",
     description: "Smart waste management system designed for Mangaluru urban areas.",
-    link: "https://github.com/sthuthii/kleankaravali",
+    link: "https://github.com/sthuthii/waste_management",
     image: "/project-waste.jpg"
   },
   {
     id: 3,
-    title: "PCOS Detection",
+    title: "Crowd Management",
     category: "Machine Learning / Health",
     description: "Deep learning model for non-invasive detection of PCOS using clinical features.",
-    link: "https://github.com/sthuthii/pcos-detection",
+    link: "https://github.com/sthuthii/crowd-management",
     image: "/project-pcos.jpg"
   },
   {
     id: 4,
-    title: "Ingredient Scanner",
+    title: "PCOS detection",
     category: "Mobile App / React Native",
     description: "Full-stack mobile app identifying health hazards in food ingredients.",
-    link: "https://github.com/sthuthii/scanner-app",
+    link: "https://github.com/sthuthii/Ellara",
     image: "/project-scanner.jpg"
   }
 ];
