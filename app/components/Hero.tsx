@@ -1,12 +1,14 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 
 const Hero = () => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   
+  // Parallax offsets for the left and right columns
   const y1 = useTransform(scrollY, [0, 500], [0, -50]);
   const y2 = useTransform(scrollY, [0, 500], [0, 50]);
 
@@ -15,7 +17,7 @@ const Hero = () => {
       ref={containerRef}
       className="relative w-full flex items-center justify-center min-h-screen overflow-hidden bg-black selection:bg-white selection:text-black"
     >
-      {/* Background: Modern Dot Grid (Inverted for Dark Theme) */}
+      {/* Background: Modern Dot Grid */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(#262626_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
       <div className="max-w-6xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-20">
@@ -102,30 +104,38 @@ const Hero = () => {
           className="relative flex justify-center lg:justify-end"
         >
           <div className="relative group w-full max-w-[400px]">
-            {/* The Image Container */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/5] overflow-hidden rounded-2xl grayscale border border-white/10 transition-all duration-700 group-hover:grayscale-0 z-20"
+              className="relative aspect-[4/5] overflow-hidden rounded-2xl grayscale border border-white/10 transition-all duration-700 group-hover:grayscale-0 z-20 bg-neutral-900"
             >
-              <div className="absolute inset-0 bg-neutral-900 flex items-center justify-center font-serif italic text-3xl text-neutral-700">
+              {/* Fallback Label */}
+              <div className="absolute inset-0 flex items-center justify-center font-serif italic text-3xl text-neutral-700 z-0">
                 Photo
               </div>
-              {/* <Image src="/me.jpg" alt="Profile" fill className="object-cover" /> */}
+
+              {/* Next.js Optimized Image */}
+              <Image 
+                src="/portfolio.jpeg" 
+                alt="Sthuthi Poojary Profile" 
+                fill 
+                priority
+                className="object-cover transition-transform duration-500 group-hover:scale-105" 
+              />
               
-              {/* Dark Mode Scanline */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-20 w-full -top-20 animate-scanline pointer-events-none" />
+              {/* Scanline Effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-20 w-full -top-20 animate-scanline pointer-events-none z-30" />
             </motion.div>
 
-            {/* White Kinetic Borders */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-white -z-0 transition-all group-hover:-top-2 group-hover:-left-2" />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-2 border-r-2 border-white -z-0 transition-all group-hover:-bottom-2 group-hover:-right-2" />
+            {/* Kinetic Decorative Borders */}
+            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-white -z-0 transition-all duration-500 group-hover:-top-2 group-hover:-left-2" />
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-2 border-r-2 border-white -z-0 transition-all duration-500 group-hover:-bottom-2 group-hover:-right-2" />
           </div>
         </motion.div>
       </div>
 
-      {/* Side Scroll Text */}
+      {/* Side Scroll Decor */}
       <div className="absolute right-10 bottom-10 hidden md:flex items-center gap-4 rotate-90 origin-right">
          <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-neutral-600 italic">Scroll for more</span>
          <div className="w-20 h-[1px] bg-neutral-800" />

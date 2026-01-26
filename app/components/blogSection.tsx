@@ -1,16 +1,18 @@
-"use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { blogs } from "../data/blogs";
 import { ArrowRight } from "lucide-react";
+import { getAllPosts } from "@/app/lib/blogs";
 
-const BlogSection = () => {
+const BlogSection = async () => {
+  // Fetch all post metadata (slug, title, date, excerpt) from your .md files
+  const allPosts = await getAllPosts();
+
   return (
     <section id="blogs" className="py-32 px-6 bg-black text-white w-full overflow-hidden relative border-t border-white/5">
-      {/* Subtle Grid Accent for Dark Theme */}
+      {/* Subtle Background Grid */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:32px_32px] opacity-60 pointer-events-none" />
 
       <div className="max-w-6xl w-full mx-auto relative z-10">
+        {/* Header Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -34,37 +36,33 @@ const BlogSection = () => {
         </div>
 
         {/* Horizontal Scroll Container */}
-        <div className="flex gap-8 overflow-x-auto pb-12 snap-x no-scrollbar">
-          {blogs.map((blog, index) => (
-            <motion.div
-              key={blog.id}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+        <div className="flex gap-8 overflow-x-auto pb-12 snap-x no-scrollbar cursor-grab active:cursor-grabbing">
+          {allPosts.map((post, index) => (
+            <div
+              key={post.slug}
               className="min-w-[320px] md:min-w-[450px] snap-start group"
             >
-              <Link href={`/blogs/${blog.slug}`}>
+              <Link href={`/blogs/${post.slug}`}>
                 <div className="relative h-[450px] p-12 bg-neutral-900/40 border border-white/5 flex flex-col justify-between hover:border-white/20 hover:bg-neutral-900/60 transition-all duration-500 rounded-3xl overflow-hidden backdrop-blur-sm">
                   
-                  {/* Watermark Number - Dimmed for Dark Mode */}
+                  {/* Watermark Number */}
                   <span className="absolute -top-4 -right-4 text-[12rem] font-bold text-white/[0.02] group-hover:text-white/[0.04] transition-colors pointer-events-none z-0">
-                    {index + 1}
+                    0{index + 1}
                   </span>
 
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-10">
                        <span className="text-[10px] font-mono text-neutral-400 border border-white/10 px-3 py-1 rounded-full">
-                        {blog.date}
+                        {post.metadata.date}
                       </span>
                     </div>
                     
                     <h3 className="text-3xl font-bold tracking-tight leading-tight mb-6 group-hover:text-white transition-colors">
-                      {blog.title}
+                      {post.metadata.title}
                     </h3>
                     
                     <p className="text-neutral-500 font-light leading-relaxed line-clamp-4 group-hover:text-neutral-400 transition-colors">
-                      {blog.excerpt}
+                      {post.metadata.excerpt}
                     </p>
                   </div>
 
@@ -74,7 +72,7 @@ const BlogSection = () => {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
