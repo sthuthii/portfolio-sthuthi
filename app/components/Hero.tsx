@@ -117,7 +117,7 @@ const Hero = () => {
 
               {/* Next.js Optimized Image */}
               <Image 
-                src="/portfolio.jpeg" 
+                src="/port.jpeg" 
                 alt="Sthuthi Poojary Profile" 
                 fill 
                 priority
