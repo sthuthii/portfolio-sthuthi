@@ -39,9 +39,9 @@ const Contact = () => {
 
             <div className="space-y-4">
               {[
-                { label: "Email", value: "your.email@example.com", href: "mailto:your.email@example.com", icon: <Mail size={16}/> },
+                { label: "Email", value: "sthuthim870@gmail.com", href: "mailto:sthuthim870@gmail.com", icon: <Mail size={16}/> },
                 { label: "Github", value: "github.com/sthuthii", href: "https://github.com/sthuthii", icon: <Github size={16}/> },
-                { label: "LinkedIn", value: "linkedin.com/in/sthuthi", href: "https://linkedin.com/in/sthuthi", icon: <Linkedin size={16}/> },
+                { label: "LinkedIn", value: "linkedin.com/in/sthuthi", href: "https://www.linkedin.com/in/sthuthi-poojary-11a154293/", icon: <Linkedin size={16}/> },
               ].map((link) => (
                 <a 
                   key={link.label}
@@ -73,7 +73,7 @@ const Contact = () => {
                 <input 
                   type="text" 
                   className="w-full bg-transparent border-b border-gray-200 py-4 focus:border-black outline-none transition-colors font-light text-lg placeholder:text-gray-300"
-                  placeholder="John Doe"
+                  placeholder="Your name"
                 />
               </div>
               
@@ -82,7 +82,7 @@ const Contact = () => {
                 <input 
                   type="email" 
                   className="w-full bg-transparent border-b border-gray-200 py-4 focus:border-black outline-none transition-colors font-light text-lg placeholder:text-gray-300"
-                  placeholder="john@example.com"
+                  placeholder="email@example.com"
                 />
               </div>
 
