@@ -15,14 +15,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-[100] w-full border-b border-gray-100 bg-white/70 backdrop-blur-xl">
+    <nav className="fixed top-0 z-[100] w-full border-b border-gray-100 bg-pink-200 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between h-20 items-center">
           
           {/* Logo / Name */}
           <Link href="/" className="group flex items-center gap-0.5">
-            <div className="w-8 h-8 bg-black flex items-center justify-center rounded-sm transition-transform group-hover:rotate-90">
-              <span className="text-white text-xs font-mono">S</span>
+            <div className="w-8 h-8 bg-white flex items-center justify-center rounded-sm transition-transform group-hover:rotate-90">
+              <span className="text-black text-xs font-mono">S</span>
             </div>
             <span className="text-sm font-bold tracking-[0.3em] uppercase text-black">
               thuthi<span className="text-gray-400 font-light">.Dev</span>

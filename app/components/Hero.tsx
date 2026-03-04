@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 
+
 const Hero = () => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
@@ -15,7 +16,7 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full flex items-center justify-center min-h-screen overflow-hidden bg-black selection:bg-white selection:text-black"
+      className="relative w-full flex items-center justify-center min-h-screen overflow-hidden bg-pink-200 selection:bg-white selection:text-black"
     >
       {/* Background: Modern Dot Grid */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(#262626_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
@@ -82,7 +83,7 @@ const Hero = () => {
             className="flex flex-wrap items-center gap-8"
           >
             <Link
-              href="/projects"
+              href="/#projects"
               className="group relative px-10 py-4 bg-white text-black rounded-full transition-all hover:pr-14"
             >
               <span className="text-sm font-medium tracking-tight">View Work</span>
@@ -90,7 +91,7 @@ const Hero = () => {
             </Link>
             
             <Link
-              href="/contact"
+              href="/contacts"
               className="text-sm font-bold uppercase tracking-widest text-white border-b-2 border-white/10 hover:border-white transition-all pb-1"
             >
               Contact Me

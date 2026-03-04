@@ -1,12 +1,7 @@
 ---
-title: "Building CollabBoard"
+title: "Why I switched from Docker Desktop to Docker CLI."
 date: "Jan 26, 2026"
-excerpt: "How I tackled real-time syncing."
+excerpt: "Docker Desktop seemed like the easy button for my Collabboard project, but 'Module Not Found' and 'ECONNREFUSED' errors had me tearing my hair out. This is the story of how I stopped fighting an invisible enemy and used the Docker CLI to get my monorepo running in WSL."
 ---
 
 # My Journey
-This is where you can type as much as you want. 
-
-* You can use **bold** text.
-* You can add [links](https://github.com).
-* You can even add code blocks!

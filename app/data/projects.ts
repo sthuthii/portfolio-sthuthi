@@ -13,7 +13,7 @@ export const projects = [
     category: "Smart City / IoT",
     description: "Smart waste management system designed for Mangaluru urban areas.",
     link: "https://github.com/sthuthii/waste_management",
-    image: "/project-waste.jpg"
+    image: "/public/waste.png"
   },
   {
     id: 3,
