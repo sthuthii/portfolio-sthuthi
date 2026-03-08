@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Send, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
+const variable = process.env.NEXT_PUBLIC_YOUR_ACCESS_KEY as string;
+
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -12,7 +14,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", variable);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
