@@ -55,7 +55,7 @@ const ProjectSection = () => {
               className="min-w-[350px] md:min-w-[500px] group/card snap-center"
             >
               <Link href={project.link} target="_blank">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-50 border border-gray-100">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black border border-gray-100">
                   <div className="absolute inset-0 grayscale group-hover/card:grayscale-0 group-hover/card:scale-105 transition-all duration-700 flex items-center justify-center text-gray-200 font-serif italic text-6xl select-none">
                     {project.title.charAt(0)}
                   </div>

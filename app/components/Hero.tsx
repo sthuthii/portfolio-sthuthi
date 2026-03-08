@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full flex items-center justify-center min-h-screen overflow-hidden bg-pink-200 selection:bg-white selection:text-black"
+      className="relative w-full flex items-center justify-center min-h-screen overflow-hidden bg-black-200 selection:bg-white selection:text-black"
     >
       {/* Background: Modern Dot Grid */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(#262626_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />

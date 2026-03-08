@@ -15,14 +15,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-[100] w-full border-b border-gray-100 bg-pink-200 backdrop-blur-xl">
+    <nav className="fixed top-0 z-[100] w-full border-b border-gray-100 bg-white backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between h-20 items-center">
           
           {/* Logo / Name */}
           <Link href="/" className="group flex items-center gap-0.5">
-            <div className="w-8 h-8 bg-white flex items-center justify-center rounded-sm transition-transform group-hover:rotate-90">
-              <span className="text-black text-xs font-mono">S</span>
+            <div className="w-8 h-8 bg-black flex items-center justify-center rounded-sm transition-transform group-hover:rotate-90">
+              <span className="text-white text-xs font-mono">S</span>
             </div>
             <span className="text-sm font-bold tracking-[0.3em] uppercase text-black">
               thuthi<span className="text-gray-400 font-light">.Dev</span>
@@ -35,7 +35,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-500 hover:text-black transition-colors relative group"
+                className="text-[12px] font-mono uppercase tracking-[0.2em] text-black text-5xl hover:text-pink-300 transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-black transition-all group-hover:w-full" />
@@ -46,7 +46,7 @@ const Navbar = () => {
             <a
               href="/resume.pdf"
               target="_blank"
-              className="px-5 py-2 text-[10px] font-mono uppercase tracking-widest text-white bg-black border border-black hover:bg-white hover:text-black transition-all duration-300"
+              className="px-5 py-2 text-[10px] font-mono uppercase tracking-widest text-white bg-black border border-black hover:bg-pink-300 hover:text-black transition-all duration-300"
             >
               Resume
             </a>

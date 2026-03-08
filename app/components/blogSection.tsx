@@ -7,7 +7,7 @@ import { Post } from "@/app/lib/blogs";
 
 export default function BlogSection({ allPosts }: { allPosts: Post[] }) {
   return (
-    <section id="blogs" className="py-32 px-6 bg-pink-200 text-white w-full overflow-hidden relative border-t border-white/5">
+    <section id="blogs" className="py-32 px-6 bg-black text-white w-full overflow-hidden relative border-t border-white/5">
       {/* Animated Mesh Background */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-white/5 blur-[120px] rounded-full animate-pulse" />
@@ -45,7 +45,7 @@ export default function BlogSection({ allPosts }: { allPosts: Post[] }) {
         </header>
 
         {/* Horizontal Cards */}
-        <div className="flex gap-10 overflow-x-auto pb-20 pt-10 no-scrollbar snap-x">
+        <div className="flex gap-10 overflow-x-auto pb-20 pt-10 no-scrollbar snap-x" >
           {allPosts.map((post, index) => (
             <BlogCard key={post.slug} post={post} index={index} />
           ))}
@@ -75,7 +75,7 @@ function BlogCard({ post, index }: { post: Post; index: number }) {
       onMouseMove={handleMouseMove}
     >
       <Link href={`/blogs/${post.slug}`} className="block relative">
-        <div className="relative h-[550px] p-10 bg-neutral-950 border border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-700 group-hover:border-white/20 group-hover:bg-neutral-900/40 backdrop-blur-xl">
+        <div className="relative h-[550px] p-10 bg-white border text-black border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-700 group-hover:border-white/20 group-hover:bg-neutral-900/40 backdrop-blur-xl">
           
           {/* Spotlight Effect */}
           <motion.div

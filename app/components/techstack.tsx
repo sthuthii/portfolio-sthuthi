@@ -22,7 +22,7 @@ const skills = [
 
 const TechStack = () => {
   return (
-    <section id="tech" className="py-32 px-6 bg-pink-200 text-white w-full overflow-hidden">
+    <section id="tech" className="py-32 px-6 bg-black text-white w-full overflow-hidden">
       <div className="max-w-6xl w-full mx-auto">
         
         {/* Animated Header */}
@@ -33,7 +33,7 @@ const TechStack = () => {
             viewport={{ once: true }}
             className="text-6xl md:text-8xl font-bold tracking-tighter leading-none"
           >
-            The <span className="font-serif italic text-black">Engine.</span>
+            The <span className="font-serif italic text-white">Engine.</span>
           </motion.h2>
           <p className="font-mono text-[10px] uppercase tracking-[0.5em] text-gray-500">
             Technical Stack // 2026 Edition

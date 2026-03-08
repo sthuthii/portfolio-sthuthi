@@ -85,7 +85,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                className="p-8 rounded-xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:border-black hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.05)] transition-all duration-300 group"
+                className="p-8 rounded-xl bg-gray border border-gray-300 hover:bg-white hover:border-black hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,0.05)] transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-lg border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-black group-hover:text-white transition-all duration-300 overflow-hidden">
                   <motion.div
