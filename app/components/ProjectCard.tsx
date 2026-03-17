@@ -93,7 +93,7 @@ const ProjectSection = () => {
 
       {/* Visual Instruction */}
       <div className="max-w-6xl mx-auto px-6 mt-10">
-        <p className="text-[9px] font-mono text-gray-300 uppercase tracking-[0.5em]">
+        <p className="text-[9px] font-mono text-black uppercase tracking-[0.5em]">
           Scroll or drag to explore
         </p>
       </div>

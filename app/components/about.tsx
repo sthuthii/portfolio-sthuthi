@@ -6,12 +6,12 @@ const roles = [
   {
     icon: <Code className="w-5 h-5" />,
     title: "Full-Stack Developer",
-    description: "Building production-ready apps like CollabBoard and smart waste systems.",
+    description: "I love building production-ready apps like CollabBoard and smart waste systems.",
   },
   {
     icon: <Users className="w-5 h-5" />,
-    title: "Club Member & Leader",
-    description: "Active contributor to technical communities, organizing workshops and hackathons.",
+    title: "Member at Sahyadri Open Source Community",
+    description: "Active contributor to open source projects, organizing workshops and hackathons.",
   },
   {
     icon: <Lightbulb className="w-5 h-5" />,
@@ -20,7 +20,7 @@ const roles = [
   },
   {
     icon: <GraduationCap className="w-5 h-5" />,
-    title: "Continuous Learner",
+    title: "Data Structure & Algorithm Enthusiast",
     description: "Mastering DSA and Backend Architecture to build high-performance systems.",
   },
 ];
@@ -64,8 +64,7 @@ const About = () => {
             
             <div className="space-y-8 max-w-xl">
               <p className="text-2xl text-gray-800 font-medium leading-tight tracking-tight">
-                I am a developer driven by the challenge of creating tools that bridge 
-                the gap between complex data and user-friendly interfaces.
+                I am a student, who loves building too many things at a time. With a passion for backend and Machine learning, I tend to work on problems that I feel that are needed to be worked on.
               </p>
               <p className="text-lg text-gray-500 leading-relaxed font-normal border-l-2 border-gray-100 pl-6">
                 My journey spans from developing real-time collaborative whiteboards to 

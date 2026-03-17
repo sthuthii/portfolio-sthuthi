@@ -18,7 +18,7 @@ export default function BlogSection({ allPosts }: { allPosts: Post[] }) {
         <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 0.2, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
@@ -68,14 +68,14 @@ function BlogCard({ post, index }: { post: Post; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 2, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="min-w-[350px] md:min-w-[500px] snap-center group"
       onMouseMove={handleMouseMove}
     >
       <Link href={`/blogs/${post.slug}`} className="block relative">
-        <div className="relative h-[550px] p-10 bg-white border text-black border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-700 group-hover:border-white/20 group-hover:bg-neutral-900/40 backdrop-blur-xl">
+        <div className="relative h-[550px] p-10 bg-white border text-black border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-700 group-hover:border-white/20 group-hover:bg-orange-100/40 backdrop-blur-xl">
           
           {/* Spotlight Effect */}
           <motion.div
