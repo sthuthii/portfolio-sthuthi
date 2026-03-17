@@ -16,7 +16,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Sthuthi | Full-Stack Developer & ML Enthusiast",
+  title: "Sthuthi | AI/ML Enthusiast",
   description: "Portfolio specializing in Next.js, Backend Systems, and Machine Learning.",
 };
 
