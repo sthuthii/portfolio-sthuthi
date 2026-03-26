@@ -44,7 +44,7 @@ const Navbar = () => {
             
             {/* High-Contrast Resume Button */}
             <a
-              href="/resume.pdf"
+              href="/Sthuthi_Poojary.pdf"
               target="_blank"
               className="px-5 py-2 text-[10px] font-mono uppercase tracking-widest text-white bg-black border border-black hover:bg-pink-300 hover:text-black transition-all duration-300"
             >
