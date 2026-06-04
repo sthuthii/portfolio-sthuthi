@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { Geist, Instrument_Serif } from "next/font/google";
 
 const geistSans = Geist({
@@ -12,7 +13,7 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
   weight: "400",
   subsets: ["latin"],
-  style: ["italic", "normal"], // Added normal for flexibility
+  style: ["italic", "normal"],
 });
 
 export const metadata: Metadata = {
@@ -28,19 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${instrumentSerif.variable} antialiased bg-black text-white overflow-x-hidden w-full`}
+        className={`${geistSans.variable} ${instrumentSerif.variable} antialiased bg-[#0A0E1A] text-[#E2E8F0] overflow-x-hidden w-full`}
       >
-        {/* The Grainy Noise Overlay - Adds texture to the black */}
-        <div className="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-        
-        {/* Global Spotlight Effect - Optional: wrap main if you want it everywhere */}
         <Navbar />
-        
         <main className="w-full min-h-screen relative">
           {children}
         </main>
-
-        
+        <Footer />
       </body>
     </html>
   );

@@ -2,100 +2,85 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
-import {projects} from '../data/projects'
-
-/*const projects = [
-  { id: 1, title: "CollabBoard", category: "Full-Stack", description: "Real-time collaborative whiteboard.", link: "https://github.com/sthuthii/collabboard" },
-  { id: 2, title: "KleanKaravali", category: "Smart City", description: "Smart waste management system.", link: "https://github.com/sthuthii/kleankaravali" },
-  { id: 3, title: "PCOS Detection", category: "ML / Health", description: "Deep learning clinical model.", link: "https://github.com/sthuthii/pcos-detection" },
-  { id: 4, title: "Bio-Vault", category: "Web3 / Health", description: "Decentralized medical data twin.", link: "https://github.com/sthuthii" },
-];*/
+import { projects } from "../data/projects";
 
 const ProjectSection = () => {
-  const [isPaused, setIsPaused] = useState(false);
-  const duplicatedProjects = [...projects, ...projects, ...projects];
-
   return (
-    <section id="projects" className="py-32 bg-white w-full border-t border-gray-100">
+    <section id="projects" className="py-32 bg-[#0F1629] w-full border-t border-[rgba(56,189,248,0.08)] overflow-hidden">
       <div className="max-w-6xl w-full mx-auto px-6 mb-16">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-[1px] bg-black" />
-          <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-gray-400">Selected Work</span>
+          <div className="w-8 h-[1px] bg-[#38BDF8]/50" />
+          <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#38BDF8]/70">
+            Selected Work
+          </span>
         </div>
-        <h2 className="text-6xl font-bold text-black tracking-tighter leading-none">
-          Featured <br />
-          <span className="font-serif italic text-gray-400 font-light underline decoration-gray-100 underline-offset-[12px]">Creations.</span>
+        <h2 className="text-6xl font-bold text-[#E2E8F0] tracking-tighter leading-none">
+          Featured{" "}
+          <br />
+          <span className="font-serif italic text-[#38BDF8] font-light electric-text-glow">
+            Creations.
+          </span>
         </h2>
       </div>
 
-      {/* Manual Scroll Container: 
-          Uses 'overflow-x-auto' for manual scrolling 
-          and 'cursor-grab' for a tactile feel.
-      */}
-      <div 
-        className="flex overflow-x-auto overflow-y-hidden cursor-grab active:cursor-grabbing no-scrollbar py-10"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <motion.div 
-          className="flex gap-8 px-6"
-          animate={isPaused ? {} : { x: [0, -1500] }}
-          transition={{
-            x: {
-              duration: 40,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
-        >
-          {duplicatedProjects.map((project, index) => (
-            <div 
-              key={`${project.id}-${index}`}
-              className="min-w-[350px] md:min-w-[500px] group/card snap-center"
-            >
-              <Link href={project.link} target="_blank">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black border border-gray-100">
-                  <div className="absolute inset-0 grayscale group-hover/card:grayscale-0 group-hover/card:scale-105 transition-all duration-700 flex items-center justify-center text-gray-200 font-serif italic text-6xl select-none">
+      {/* Cards grid */}
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Link href={project.link} target="_blank" className="group block">
+              {/* Image area */}
+              <div className="relative h-56 overflow-hidden bg-[#0A0E1A] border border-[rgba(56,189,248,0.1)] group-hover:border-[rgba(56,189,248,0.4)] transition-all duration-500">
+                {/* Grid bg inside card */}
+                <div className="absolute inset-0 grid-bg opacity-60" />
+
+                {/* Large letter */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-[7rem] font-bold text-[#38BDF8]/5 group-hover:text-[#38BDF8]/10 transition-all duration-700 select-none font-mono">
                     {project.title.charAt(0)}
-                  </div>
-
-                  {/* High-Contrast Hover Overlay */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover/card:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500">
-                      <Github className="text-black w-6 h-6" />
-                    </div>
-                    <p className="text-white font-mono text-[10px] uppercase tracking-[0.4em] translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500 delay-75">
-                      Explore Repository
-                    </p>
-                  </div>
+                  </span>
                 </div>
 
-                <div className="mt-8 flex justify-between items-start">
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono uppercase text-gray-400 tracking-widest">{project.category}</span>
-                    <h3 className="text-2xl font-bold text-black tracking-tight group-hover/card:text-gray-500 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-400 font-light max-w-xs line-clamp-2">
-                      {project.description}
-                    </p>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-[#0A0E1A]/80 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-400">
+                  <div className="w-12 h-12 border border-[#38BDF8]/50 flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                    <Github className="w-5 h-5 text-[#38BDF8]" />
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover/card:bg-black group-hover/card:text-white transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </div>
+                  <span className="text-[#38BDF8] font-mono text-[10px] uppercase tracking-[0.4em] translate-y-4 group-hover:translate-y-0 transition-transform duration-400 delay-75">
+                    View Repository
+                  </span>
                 </div>
-              </Link>
-            </div>
-          ))}
-        </motion.div>
-      </div>
 
-      {/* Visual Instruction */}
-      <div className="max-w-6xl mx-auto px-6 mt-10">
-        <p className="text-[9px] font-mono text-black uppercase tracking-[0.5em]">
-          Scroll or drag to explore
-        </p>
+                {/* Electric scan line on hover */}
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-[#38BDF8] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#38BDF8] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-75 origin-right" />
+              </div>
+
+              {/* Info */}
+              <div className="mt-5 flex justify-between items-start">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono uppercase text-[#38BDF8]/60 tracking-widest">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-[#E2E8F0] tracking-tight group-hover:text-[#38BDF8] transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-[#475569] font-light max-w-xs leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                <div className="w-10 h-10 border border-[rgba(56,189,248,0.15)] flex items-center justify-center group-hover:border-[#38BDF8] group-hover:bg-[rgba(56,189,248,0.08)] transition-all duration-300 flex-shrink-0 mt-1">
+                  <ArrowUpRight className="w-4 h-4 text-[#64748B] group-hover:text-[#38BDF8] transition-colors" />
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
