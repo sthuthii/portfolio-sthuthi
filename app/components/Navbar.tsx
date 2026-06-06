@@ -4,11 +4,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Stack", href: "#tech" },
-  { name: "Projects", href: "#projects" },
-  { name: "Journal", href: "#blogs" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/#about" },
+  { name: "Stack", href: "/#tech" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Journal", href: "#/blogs" },
+  { name: "Contact", href: "#/contact" },
 ];
 
 export default function Navbar() {

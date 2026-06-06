@@ -40,7 +40,7 @@ export default function BlogSection({ allPosts }: { allPosts: Post[] }) {
             transition={{ delay: 0.3 }}
           >
             <Link
-              href="/blogs"
+              href="/#blogs"
               className="group flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.3em] text-[#38BDF8] border border-[rgba(56,189,248,0.3)] px-6 py-3 hover:bg-[rgba(56,189,248,0.08)] hover:border-[#38BDF8] transition-all duration-300"
             >
               All Posts
