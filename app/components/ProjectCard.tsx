@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 import { projects } from "../data/projects";
+import Image from "next/image";
 
 const ProjectSection = () => {
   return (
@@ -40,11 +41,20 @@ const ProjectSection = () => {
                 <div className="absolute inset-0 grid-bg opacity-60" />
 
                 {/* Large letter */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[7rem] font-bold text-[#38BDF8]/5 group-hover:text-[#38BDF8]/10 transition-all duration-700 select-none font-mono">
-                    {project.title.charAt(0)}
-                  </span>
-                </div>
+                {project.image ? (
+  <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    className="object-cover transition-transform duration-700 group-hover:scale-105"
+  />
+) : (
+  <div className="absolute inset-0 flex items-center justify-center">
+    <span className="text-[7rem] font-bold text-[#38BDF8]/5 group-hover:text-[#38BDF8]/10 transition-all duration-700 select-none font-mono">
+      {project.title.charAt(0)}
+    </span>
+  </div>
+)}
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-[#0A0E1A]/80 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-400">
