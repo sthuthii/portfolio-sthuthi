@@ -51,7 +51,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="/Sthuthi_Poojary.pdf"
+              href="/Sthuthi Poojary .pdf"
               target="_blank"
               className="px-5 py-2 text-[10px] font-mono uppercase tracking-widest text-[#38BDF8] border border-[#38BDF8]/40 hover:border-[#38BDF8] hover:bg-[rgba(56,189,248,0.08)] transition-all duration-300"
             >

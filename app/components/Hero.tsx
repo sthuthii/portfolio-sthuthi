@@ -48,21 +48,22 @@ const Hero = () => {
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="block text-7xl md:text-8xl lg:text-9xl text-[#E2E8F0]"
+                  className="block text-7xl md:text-8xl lg:text-8xl text-[#E2E8F0]"
                 >
                   Sthuthi
                 </motion.span>
               </div>
               <div className="overflow-hidden">
-                <motion.span
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="block text-7xl md:text-8xl lg:text-9xl text-[#38BDF8] electric-text-glow font-light italic font-serif"
-                >
-                  Poojary.
-                </motion.span>
-              </div>
+  <motion.span
+    initial={{ y: "100%" }}
+    animate={{ y: 0 }}
+    transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+    className="block w-full max-w-4xl mx-auto py-4 text-4xl md:text-5xl lg:text-9xl text-[#38BDF8] electric-text-glow font-light italic font-serif"
+  >
+    Poojary.
+  </motion.span>
+</div>
+
             </h1>
           </motion.div>
 
